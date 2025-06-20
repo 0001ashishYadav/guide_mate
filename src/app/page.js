@@ -95,56 +95,6 @@ export default function Home() {
     recognition.start();
   };
 
-  // const handleVoiceSearch = () => {
-  //   setIsListening(!isListening);
-  //   // Simulate voice recognition (actual Gemini API integration would go here)
-  //   if (!isListening) {
-  //     setTimeout(() => {
-  //       setIsListening(false);
-  //       setSearchQuery("Central Park, New York");
-  //     }, 3000);
-  //   }
-  // };
-
-  // const handleVoiceSearch = () => {
-  //   const SpeechRecognition =
-  //     window.SpeechRecognition || window.webkitSpeechRecognition;
-  //   const recognition = new SpeechRecognition();
-
-  //   recognition.lang = "en-US";
-
-  //   recognition.onstart = () => console.log("🎤 Listening...");
-
-  //   setIsListening(true); // Start listening state
-
-  //   recognition.onresult = async (event) => {
-  //     const text = event.results[0][0].transcript;
-  //     console.log("✅ You said:", text);
-
-  //     setIsListening(false); // Stop listening after result
-  //     setQuery(text);
-  //     speak(`Searching for ${text}`);
-
-  //     const results = await getPlacesFromGemini(text);
-  //     console.log(results);
-
-  //     setPlaces(results);
-  //     speak(`${results.length} places found.`);
-  //   };
-
-  //   recognition.onerror = (event) => {
-  //     console.error("Speech recognition error:", event.error);
-  //     setIsListening(false); // Stop listening if error
-  //     speak("Sorry, I couldn't understand that.");
-  //   };
-
-  //   recognition.onend = () => {
-  //     setIsListening(false); // Just in case, turn off listening when finished
-  //   };
-
-  //   recognition.start();
-  // };
-
   const handleVoiceSearch = () => {
     // Check if browser supports speech recognition
     const SpeechRecognition =
@@ -286,26 +236,12 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* <main className="min-h-screen bg-gray-100 p-6">
-        <h1 className="text-3xl font-bold mb-4">
-          🎙️ Voice Area Guide (Gemini)
-        </h1>
-        <button
-          onClick={handleSpeech}
-          className="px-6 py-3 bg-purple-600 text-white rounded-lg"
-        >
-          Speak a query: "Show tourist places in Jaipur"
-        </button>
-        <p className="mt-4">
-          You said: <strong>{query}</strong>
-        </p>
 
-        <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          {places.map((place, index) => (
-            <InfoCard key={index} place={place} />
-          ))}
-        </div>
-      </main> */}
+      {/* <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        {places.map((place, index) => (
+          <InfoCard key={index} place={place} />
+        ))}
+      </div> */}
 
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
